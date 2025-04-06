@@ -3,7 +3,7 @@ import React from "react";
 type TSPProps = {};
 
 const TSP = ({}: TSPProps) => {
-  return <div>Tic Tac Toe</div>;
+  return <div>TSP</div>;
 };
 
 export default TSP;

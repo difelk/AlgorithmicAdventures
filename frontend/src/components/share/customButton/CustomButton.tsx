@@ -10,7 +10,14 @@ type ButtonProps = {
   disabled?: boolean;
   size?: "small" | "medium" | "large";
   className?: string;
-  variant?: "primary" | "secondary" | "special" | "danger" | "success" | "gray";
+  variant?:
+    | "primary"
+    | "secondary"
+    | "special"
+    | "danger"
+    | "success"
+    | "gray"
+    | "ghost";
   loading?: boolean;
   outlined?: boolean;
   capitalize?: boolean;
@@ -21,6 +28,7 @@ type ButtonProps = {
   download?: boolean;
   secondaryText?: string;
   manualBookingBtnLoader?: boolean;
+  active?: boolean;
 };
 
 const CustomButton: React.FC<ButtonProps> = ({
@@ -33,6 +41,7 @@ const CustomButton: React.FC<ButtonProps> = ({
   loading = false,
   iconSide = "left",
   onClick,
+  active,
 }) => {
   const [isLoading, setIsLoading] = useState(loading ?? false);
 
@@ -43,17 +52,33 @@ const CustomButton: React.FC<ButtonProps> = ({
   const buttonVariantClass = () => {
     switch (variant) {
       case "primary":
-        return styles.primaryButton;
+        return active
+          ? [styles.primaryButton, styles.primaryButtonActive].join(" ")
+          : styles.primaryButton;
       case "secondary":
-        return styles.secondaryButton;
+        return active
+          ? [styles.secondaryButton, styles.secondaryButtonActive].join(" ")
+          : styles.secondaryButton;
       case "special":
-        return styles.specialButton;
+        return active
+          ? [styles.specialButton, styles.specialButtonActive].join(" ")
+          : styles.specialButton;
       case "success":
-        return styles.successButton;
+        return active
+          ? [styles.successButton, styles.successButtonActive].join(" ")
+          : styles.successButton;
       case "danger":
-        return styles.dabgerButton;
+        return active
+          ? [styles.dangerButton, styles.dangerButtonActive].join(" ")
+          : styles.dangerButton;
+      case "ghost":
+        return active
+          ? [styles.ghostButton, styles.ghostButtonActive].join(" ")
+          : styles.ghostButton;
       default:
-        return styles.primaryButton;
+        return active
+          ? [styles.primaryButton, styles.primaryButtonActive].join(" ")
+          : styles.primaryButton;
     }
   };
 
