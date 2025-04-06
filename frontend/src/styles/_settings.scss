@@ -1,0 +1,114 @@
+$primary-color: #2aaae1;
+$secondary-color: #1b4079;
+$special-color: #ff8812;
+$text-dark-color: #4d4d4d;
+$text-light-color: #8d8d8d;
+$light-color: #f2f2f2;
+$light-primary-color: #f2f7fa;
+$border-color: #e2e2e2;
+$border-secondary-color: #1b40791f;
+$success-color: #10cc18;
+$danger-color: #fe5f55;
+$warning-color: #f2bd0b;
+$disabled-color: #d3d3d3;
+$premium-color: #b32038;
+$white: #ffffff;
+$black: #000000;
+
+$xs: 320px;
+$sm: 600px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 2500px;
+
+@mixin respondTo($brack-point) {
+  @media only screen and (min-width: $brack-point) {
+    @content;
+  }
+}
+
+@mixin respondUpTo($break-point) {
+  @media only screen and (max-width: $break-point) {
+    @content;
+  }
+}
+
+/**  color mixins */
+@mixin filled($color) {
+  border: 3px solid $color;
+  background-color: $color;
+  color: $white;
+
+  &:hover {
+    border-color: darken($color, 10);
+    background-color: darken($color, 10);
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: $disabled-color;
+    pointer-events: none;
+    border-color: $disabled-color;
+  }
+}
+
+@mixin signInBtn($color) {
+  border: 3px solid $color;
+  background-color: $color;
+  color: $white;
+
+  &:hover {
+    border-color: darken($color, 20);
+    background-color: darken($color, 20);
+    color: $white;
+    box-shadow: 0 0 1px 3px rgba($primary-color, 0.6);
+  }
+}
+
+@mixin outlined($color) {
+  border: 3px solid $color;
+  background-color: transparent;
+  color: $color;
+
+  &:hover {
+    border-color: darken($color, 10);
+    background-color: darken($color, 10);
+    color: $white;
+  }
+
+  &:focus,
+  &:active {
+    border-color: darken($color, 20);
+    background-color: darken($color, 20);
+    color: $white;
+    box-shadow: 0 0 1px 1px rgba($primary-color, 0.2);
+  }
+
+  &:disabled {
+    background-color: transparent;
+    pointer-events: none;
+    border-color: $disabled-color;
+  }
+}
+
+@mixin outlinedLoading($color) {
+  background-color: transparent !important;
+  border: 3px solid lighten($color, 10) !important;
+  pointer-events: none !important;
+
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+  }
+}
+@mixin loading($color) {
+  background-color: lighten($color, 10) !important;
+  border: 3px solid lighten($color, 10) !important;
+  pointer-events: none !important;
+
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+  }
+}
