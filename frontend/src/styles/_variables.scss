@@ -1,0 +1,26 @@
+@import "./settings";
+
+$theme-colors: (
+  primaryColor: $primary-color,
+  secondaryColor: $secondary-color,
+  specialColor: $special-color,
+  textDarkColor: $text-dark-color,
+  textLightColor: $text-light-color,
+  lightColor: $light-color,
+  lightPrimaryColor: $light-primary-color,
+  borderColor: $border-color,
+  borderSecondaryColor: $border-secondary-color,
+  successColor: $success-color,
+  dangerColor: $danger-color,
+  warningColor: $warning-color,
+  disabledColor: $disabled-color,
+  colorWhite: $white,
+  colorBlack: $black,
+  premiumColor: $premium-color,
+);
+
+:export {
+  @each $color, $value in $theme-colors {
+    #{$color}: #{$value};
+  }
+}
