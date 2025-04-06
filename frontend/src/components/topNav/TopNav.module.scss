@@ -1,1 +1,31 @@
-@import "../../styles/settings;
+@import "../../styles/settings";
+
+.navbar {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $white;
+  padding: 8px;
+  border-bottom: 2px solid $border-color;
+
+  .navbarlogo {
+    display: block;
+    height: 40px;
+    width: 150px;
+    background-color: aqua;
+  }
+  .navbarlogoLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      margin-right: 12px;
+    }
+    button:last-child {
+      margin-right: 0;
+    }
+  }
+}

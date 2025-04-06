@@ -1,0 +1,36 @@
+@import "../../../styles/settings";
+
+.customButton {
+  display: flex;
+  flex-direction: row;
+  color: $white;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 14px;
+  font-family: "Ubuntu";
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &Text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    margin: 0 !important;
+    gap: 5px;
+  }
+}
+
+.primaryButton {
+  background-color: #34ead3 !important;
+  outline: #34ead3;
+  border: none;
+}
