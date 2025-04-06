@@ -3,7 +3,7 @@ import React from "react";
 type TowerOfHanoiProps = {};
 
 const TowerOfHanoi = ({}: TowerOfHanoiProps) => {
-  return <div>Tic Tac Toe</div>;
+  return <div>Tower Of Hanoi</div>;
 };
 
 export default TowerOfHanoi;

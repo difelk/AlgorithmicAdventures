@@ -1,1 +1,35 @@
-@import "../../styles/settings;
+@import "../../styles/settings";
+
+.navbar {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $white;
+  padding: 28px;
+  border-bottom: 2px solid $border-color;
+
+  .navbarlogo {
+    display: block;
+    height: 50px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .navbarlogoLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      margin-right: 12px;
+    }
+    button:last-child {
+      margin-right: 0;
+    }
+  }
+}
